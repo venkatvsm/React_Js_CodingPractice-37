@@ -1,0 +1,53 @@
+/* Write your CSS here */
+.bg_container {
+  min-height: 100vh;
+  font-family: 'Roboto';
+  background-color: #161625;
+  padding: 30px;
+  padding-left: 60px;
+}
+.logocontainer {
+  display: flex;
+  align-items: center;
+  color: #2cc6c6;
+  width: 100%;
+}
+.websiteLogo {
+  width: 100px;
+}
+.Logo_heading {
+  font-size: 45px;
+  margin-left: 20px;
+}
+.spinner_loader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.VacccinationCoverage_container {
+  padding: 15px;
+  background-color: yellow;
+  width: 100%;
+}
+.VacccinationCoverage_heading {
+  color: #cbd5e1;
+  font-size: 26px;
+  font-weight: 600;
+}
+.heading {
+  color: #ffffff;
+}
+.failure-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failureView_image {
+  width: 60%;
+}
+.failureView_heading {
+  color: #ffffff;
+  font-family: 'lobster';
+}
