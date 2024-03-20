@@ -18,26 +18,26 @@ class CowinDashboard extends Component {
     this.setState({apiStatus: 'LOADING'})
     const url = 'https://apis.ccbp.in/covid-vaccination-data'
     const response = await fetch(url)
-    const data = await response.json()
-    const last7DaysVaccination = data.last_7_days_vaccination.map(eachItem => ({
-      dose1: eachItem.dose_1,
-      dose2: eachItem.dose_2,
-      vaccineDate: eachItem.vaccine_date,
-    }))
-    const vaccinationByAge = data.vaccination_by_age.map(item => ({
-      age: item.age,
-      count: item.count,
-    }))
-    const vaccinationByGender = data.vaccination_by_gender.map(each => ({
-      count: each.count,
-      gender: each.gender,
-    }))
-    const updatedData = {
-      last7DaysVaccination,
-      vaccinationByAge,
-      vaccinationByGender,
-    }
     if (response.ok === true) {
+      const data = await response.json()
+      const last7DaysVaccination = data.last_7_days_vaccination.map(eachItem => ({
+        dose1: eachItem.dose_1,
+        dose2: eachItem.dose_2,
+        vaccineDate: eachItem.vaccine_date,
+      }))
+      const vaccinationByAge = data.vaccination_by_age.map(item => ({
+        age: item.age,
+        count: item.count,
+      }))
+      const vaccinationByGender = data.vaccination_by_gender.map(each => ({
+        count: each.count,
+        gender: each.gender,
+      }))
+      const updatedData = {
+        last7DaysVaccination,
+        vaccinationByAge,
+        vaccinationByGender,
+      }
       this.setState({apiStatus: 'SUCCESS', productList: updatedData})
     } else {
       this.setState({apiStatus: 'FAILURE'})
